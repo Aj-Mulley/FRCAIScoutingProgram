@@ -8,7 +8,8 @@ project = rf.workspace().project("scouting-2024")
 model = project.version("1").model
 
 job_id, signed_url, expire_time = model.predict_video(
-    "C:\Code\Senior_Project\Test1T.mp4",
+    "video.mp4",
+    #add the file path to your chosen video
     fps=20,
     prediction_type="batch-video",
 )
@@ -17,7 +18,7 @@ results = model.poll_until_video_results(job_id)
 
 print(results)
 # roboflow.login()
-# rf = roboflow.Roboflow(api_key="yzoBChoBMGDIlJ5WizRR")
+
 
 
 # jupyter_server = list(notebookapp.list_running_servers())[0]["url"]
